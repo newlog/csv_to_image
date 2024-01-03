@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from pandas.plotting import table
 
 # Load your CSV file
-csv_file = 'nutrients.csv'  # Make sure to provide the correct path
+csv_file = 'input/nutrients.csv'  # Make sure to provide the correct path
 #csv_file = 'daily_nutrient_intake_muscle_gain.csv'  # Make sure to provide the correct path
 df = pd.read_csv(csv_file)
 
@@ -34,7 +34,7 @@ for position, cell in tbl.get_celld().items():
     cell.set_text_props(fontsize=10)
 
 # Save the figure
-plt.savefig('table_image.png', bbox_inches='tight', dpi=300)
+plt.savefig('output/table_image.png', bbox_inches='tight', dpi=300)
 
 # Display the plot
 plt.show()
