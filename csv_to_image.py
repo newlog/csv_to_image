@@ -7,7 +7,7 @@ csv_file = 'nutrients.csv'  # Make sure to provide the correct path
 df = pd.read_csv(csv_file)
 
 # Replace NaN with empty strings (handle mixed data types)
-df = df.applymap(lambda x: '' if pd.isna(x) else x)
+df = df.map(lambda x: '' if pd.isna(x) else x)
 
 # Set a modern-looking font
 plt.rcParams["font.family"] = "sans-serif"
