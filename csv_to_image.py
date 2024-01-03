@@ -4,6 +4,7 @@ from pandas.plotting import table
 
 # Load your CSV file
 csv_file = 'nutrients.csv'  # Make sure to provide the correct path
+#csv_file = 'daily_nutrient_intake_muscle_gain.csv'  # Make sure to provide the correct path
 df = pd.read_csv(csv_file)
 
 # Replace NaN with empty strings (handle mixed data types)
@@ -26,7 +27,7 @@ tbl.set_fontsize(12)
 tbl.scale(1.2, 1.4)  # Increase the second value to increase cell height
 
 # Apply gray background to specific rows and first column
-categories = ['Vegetables', 'Tubers', 'Legumes', 'Nuts', 'Fruits', 'Grains', 'Meat']
+categories = ['Vegetables', 'Tubers', 'Legumes', 'Nuts', 'Fruits', 'Grains', 'Mushrooms', 'Meat']
 for position, cell in tbl.get_celld().items():
     if position[0] == 0 or (position[0] > 0 and df.iloc[position[0] - 1, 0] in categories) or position[1] == 0:
         cell.set_facecolor('lightgray')
